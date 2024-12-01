@@ -1,5 +1,6 @@
 import { readInput } from 'io';
 import { parseLines, removeWhiteSpace, splitString } from 'parse';
+import { countValues } from 'utils/array';
 import { sum } from 'utils/math';
 import { asc } from 'utils/sort';
 
@@ -23,9 +24,9 @@ export const part1 = () => {
 export const part2 = () => {
   const { leftList, rightList } = parseLists(input);
 
-  const rightListOccurrences = countValueOccurrences(rightList);
+  const rightListValueCounts = countValues(rightList);
 
-  return sum(leftList.map((value) => value * (rightListOccurrences.get(value) ?? 0)));
+  return sum(leftList.map((value) => value * (rightListValueCounts.get(value) ?? 0)));
 };
 
 //#region helpers
@@ -43,15 +44,5 @@ const parseLists = (input: string): { leftList: Array<number>; rightList: Array<
   }
 
   return { leftList, rightList };
-};
-
-const countValueOccurrences = (values: Array<number>): Map<number, number> => {
-  const count = new Map<number, number>();
-
-  for (const value of values) {
-    count.set(value, (count.get(value) ?? 0) + 1);
-  }
-
-  return count;
 };
 //#endregion
