@@ -1,4 +1,5 @@
 [submodule "inputs"]
 	path = inputs
-	url = https://github.com/yfunk/advent-of-code-2024-inputs
+	url = git@github.com:yfunk/advent-of-code-2024-inputs.git
 	branch = main
+	
