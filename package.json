@@ -1,0 +1,23 @@
+{
+  "name": "advent-of-code-2024",
+  "type": "module",
+  "author": {
+    "name": "yfunk",
+    "url": "https://github.com/yfunk/advent-of-code-2024"
+  },
+  "module": "index.ts",
+  "scripts": {
+    "bootstrap": "git submodule update --init --recursive && bun install",
+    "update-submodule": "git submodule update --remote --merge",
+    "day": "bun run ./scripts/run-day.ts",
+    "setup": "bun run ./scripts/setup-day.ts"
+  },
+  "dependencies": {
+    "typescript": "5.7.2"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "chalk": "5.3.0",
+    "prettier": "3.4.1"
+  }
+}
