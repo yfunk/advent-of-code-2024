@@ -15,3 +15,7 @@ export const countValues = <T>(array: T[]): Map<T, number> => {
     return map;
   }, new Map<T, number>());
 };
+
+export const withoutIndex = <T>(array: T[], index: number): T[] => {
+  return [...array.slice(0, index), ...array.slice(index + 1)];
+};
